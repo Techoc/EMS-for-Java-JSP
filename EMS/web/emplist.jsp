@@ -74,8 +74,10 @@
                             ${emp.age}
                     </td>
                     <td>
-                        <a href="<c:url context='${pageContext.request.contextPath}' value='/manager/safe/deleteEmp?id=${emp.id}'/>">delete emp</a>&nbsp;
-                        <a href="updateEmp.html">update emp</a>
+                        <a href="<c:url context='${pageContext.request.contextPath}' value='/manager/safe/deleteEmp?id=${emp.id}'/>">delete
+                            emp</a>&nbsp;
+                        <a href="<c:url context='${pageContext.request.contextPath}' value='/manager/safe/showEmp?id=${emp.id}'/>">update
+                            emp</a>
                     </td>
                     </tr>
                 </c:forEach>
@@ -100,7 +102,8 @@
                 </tr>
             </table>
             <p>
-                <input type="button" class="button" value="Add Employee" onclick="location='addEmp.html'"/>
+                <input type="button" class="button" value="Add Employee"
+                       onclick="location='${pageContext.request.contextPath}/addEmp.jsp'"/>
             </p>
         </div>
     </div>

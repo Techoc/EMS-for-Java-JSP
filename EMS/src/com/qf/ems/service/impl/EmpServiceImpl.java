@@ -41,4 +41,46 @@ public class EmpServiceImpl implements EmpService {
         }
         return 0;
     }
+
+    @Override
+    public int addEmp(Emp emp) {
+        int result = 0;
+        try {
+            Dbutils.begin();
+            result = empDao.insert(emp);
+            Dbutils.commit();
+        } catch (Exception e) {
+            Dbutils.rollBack();
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public Emp selectEmpById(int id) {
+        Emp emp = null;
+        try {
+            Dbutils.begin();
+            emp = empDao.select(id);
+            Dbutils.commit();
+        } catch (Exception e) {
+            Dbutils.rollBack();
+            e.printStackTrace();
+        }
+        return emp;
+    }
+
+    @Override
+    public int modifyEmp(Emp emp) {
+        int result = 0;
+        try {
+            Dbutils.begin();
+            result = empDao.update(emp);
+            Dbutils.commit();
+        } catch (Exception e) {
+            Dbutils.rollBack();
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

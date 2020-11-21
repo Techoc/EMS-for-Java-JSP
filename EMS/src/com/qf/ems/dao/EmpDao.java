@@ -11,4 +11,10 @@ public interface EmpDao {
     public long selectCount();
 
     public int delete(int id);
+
+    public int insert(Emp emp);
+
+    public Emp select(int id);
+
+    public int update(Emp emp);
 }

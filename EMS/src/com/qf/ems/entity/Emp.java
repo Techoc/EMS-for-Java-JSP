@@ -16,6 +16,12 @@ public class Emp {
         this.age = age;
     }
 
+    public Emp(String name, double salary, int age) {
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
+    }
+
     public int getId() {
         return id;
     }
